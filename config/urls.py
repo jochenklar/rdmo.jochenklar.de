@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 from rdmo.core.views import home, about, i18n_switcher
 
@@ -16,6 +17,7 @@ from rdmo.views.urls import views_patterns, views_patterns_internal, views_patte
 urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^about/$', about, name='about'),
+    url(r'^impressum/$', TemplateView.as_view(template_name="theme/impressum.html"), name='impressum'),
 
     # apps
     url(r'^account/', include(accounts_patterns)),
