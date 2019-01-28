@@ -167,6 +167,9 @@ http://rdmo.readthedocs.io/en/latest/configuration/themes.html
 '''
 
 # THEME_DIR = os.path.join(BASE_DIR, 'theme')
+from rdmo.core.settings import INSTALLED_APPS
+INSTALLED_APPS = ['theme'] + INSTALLED_APPS
+
 
 '''
 Export Formats
